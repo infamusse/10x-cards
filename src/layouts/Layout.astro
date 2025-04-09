@@ -5,20 +5,41 @@ interface Props {
   title?: string;
 }
 
-const { title = "10x Astro Starter" } = Astro.props;
+const { title = "10X Cards - AI Flashcards" } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content="AI-powered flashcard creation tool for effective learning" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body>
-    <slot />
+  <body class="min-h-screen bg-background text-foreground">
+    <header class="border-b">
+      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="text-xl font-bold">10X Cards</a>
+        <nav>
+          <ul class="flex gap-6">
+            <li><a href="/" class="hover:text-primary">Home</a></li>
+            <li><a href="/generator" class="hover:text-primary">Generator</a></li>
+            <li><a href="/decks" class="hover:text-primary">My Decks</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <main>
+      <slot />
+    </main>
+    
+    <footer class="border-t mt-12">
+      <div class="container mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
+        &copy; {new Date().getFullYear()} 10X Cards. All rights reserved.
+      </div>
+    </footer>
   </body>
 </html>
 

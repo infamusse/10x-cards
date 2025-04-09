@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GeneratorView from "../components/generator/GeneratorView";
+---
+
+<Layout title="AI Flashcard Generator">
+  <div class="container mx-auto px-4 py-6">
+    <GeneratorView client:load />
+  </div>
+</Layout>
